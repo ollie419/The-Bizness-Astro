@@ -1,17 +1,65 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="The Bizness">
+  <main class="home">
+    <div class="grid">
+
+      <!-- Card 1 -->
+      <a href="/story">
+      <article class="card" data-tag="design">
+        <div class="card-img"><img src="/SCAN_1026.JPG" alt="Andu Masebo"></div>
+        <div class="card-label">
+          <div class="card-name">Andu<br>Masebo</div>
+          <div class="card-discipline">Product<br>Designer</div>
+        </div>
+        <div class="card-bar">
+          <p class="card-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet nunc augue, a sagittis lorem pellentesque non. Curabitur vel leo eu nisl pharetra rhoncus. Donec non ornare libero. Cras turpis nulla, tempor nec eros ac, pretium volutpat libero. Nulla et ipsum dolor.</p>
+        </div>
+      </article>
+      </a>
+
+      <!-- Card 2 -->
+      <article class="card" data-tag="photography">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" data-tag="music">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card" data-tag="architecture">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="card">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="card">
+        <div class="card-img"></div>
+      </article>
+
+      <!-- Card 9 -->
+      <article class="card">
+        <div class="card-img"></div>
+      </article>
+
+    </div>
+  </main>
+</BaseLayout>

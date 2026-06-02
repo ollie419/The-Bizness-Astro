@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Bizness — IMG">
+  <main class="img-page">
+    <p class="img-curated">Curated by X</p>
+    <div class="img-grid" id="imgGrid">
+      {Array.from({ length: 50 }).map(() => (
+        <div class="img-item"></div>
+      ))}
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-img" id="lightboxImg"></div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    document.getElementById('imgGrid')?.addEventListener('click', (e) => {
+      const item = e.target.closest('.img-item');
+      if (!item) return;
+      const w = item.offsetWidth;
+      const h = item.offsetHeight;
+      const ratio = w / h;
+      if (ratio >= 1) {
+        lightboxImg.style.width = '500px';
+        lightboxImg.style.height = 'auto';
+        lightboxImg.style.aspectRatio = String(ratio);
+      } else {
+        lightboxImg.style.height = '500px';
+        lightboxImg.style.width = 'auto';
+        lightboxImg.style.aspectRatio = String(ratio);
+      }
+      lightbox.classList.add('open');
+    });
+
+    lightbox?.addEventListener('click', () => {
+      lightbox.classList.remove('open');
+    });
+  </script>
+</BaseLayout>

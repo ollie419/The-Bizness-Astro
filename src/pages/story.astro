@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="The Bizness — Story">
+  <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href)" aria-label="Share">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v13M7 8l5-5 5 5"/>
+      <path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
+    </svg>
+  </button>
+
+  <main class="story">
+    <div class="story-top">
+      <div class="story-portrait"></div>
+      <div class="story-meta">
+        <div class="story-meta-top">
+          <span>Andu Masebo</span>
+          <span>Designer</span>
+          <span>London</span>
+        </div>
+        <div class="story-meta-bottom">
+          <span>Images: Mr Photographer</span>
+          <span>Text: Mr Writer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-body">
+      <h1 class="story-title">Insert Title</h1>
+      <div class="story-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet nunc augue, a sagittis lorem pellentesque non. Curabitur vel leo eu nisl pharetra rhoncus. Donec non ornare libero. Cras turpis nulla, tempor nec eros ac, pretium volutpat libero. Nulla et ipsum dolor. Suspendisse potenti. In dignissim odio at augue porttitor bibendum ac non purus. In hac habitasse platea dictumst. Fusce et neque mollis, semper risus a, dapibus purus. Proin venenatis diam nec ex convallis aliquam. Phasellus vel tempus eros. Etiam enim purus, consequat id sagittis ut, tristique non orci. Quisque mattis eleifend volutpat. Nam efficitur ligula sem, id dignissim enim tempus et.</p>
+        <p>Ut finibus sagittis imperdiet. Nam in tellus pulvinar, tincidunt ipsum id, cursus velit. Nunc sodales, diam in suscipit consequat, est arcu faucibus nulla, id tempor justo orci vel ante. Ut sed pulvinar risus, ut scelerisque enim. Vivamus libero risus, fermentum sit amet pellentesque vitae, aliquet feugiat arcu. Quisque condimentum laoreet sapien a fringilla. Cras finibus lacus ante. Vivamus rutrum orci leo, interdum egestas sapien imperdiet ac.</p>
+        <p>Duis a massa id tortor vestibulum feugiat. Sed feugiat dolor et ullamcorper aliquam. In convallis libero libero, sit amet lacinia nisl auctor et. Fusce egestas aliquam augue, vitae tristique lacus tempus ut. In a orci vel mauris ullamcorper pretium sed eget justo. Ut dignissim augue vitae justo finibus mattis. Vivamus eros nunc, maximus eget libero vitae, molestie elementum nulla. Ut eget bibendum nibh.</p>
+        <p>In sit amet lacus sed ligula malesuada ultricies. Phasellus nec augue ut tellus laoreet facilisis. Ut dapibus quis mi vitae interdum. Aliquam auctor, turpis at porta tempor, erat turpis lacinia dui, sit amet malesuada tortor felis at nisl. Suspendisse at elit quis nisi dignissim venenatis ut a est. Etiam facilisis congue nunc quis congue. Praesent tincidunt mollis ligula quis egestas. In nec posuere ante, ac pharetra dui.</p>
+        <p>Nunc quam sem, consectetur non vulputate nec, accumsan eget augue. Vestibulum dictum ante nunc, id interdum magna semper non. In tellus nunc, interdum quis mattis eget, venenatis eu nisi. Integer id quam ac odio rutrum blandit nec sit amet tellus. Proin leo neque, hendrerit vitae porta vitae, rhoncus non sem. Etiam ante mi, convallis hendrerit vulputate eget, dictum sed nisl. Sed finibus vehicula mi ut pulvinar. Etiam ullamcorper dictum diam eu scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec eget odio aliquam, lacinia arcu at, laoreet eros. In neque lectus, rutrum mollis mattis nec, ullamcorper convallis orci. Donec finibus nunc eu venenatis aliquam.</p>
+      </div>
+    </div>
+
+    <div class="story-bottom-card"></div>
+  </main>
+</BaseLayout>
