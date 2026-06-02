@@ -78,25 +78,24 @@ const { title = 'The Bizness' } = Astro.props;
         navTag.classList.toggle('active', !isOpen);
       });
 
-      tagItems.forEach(item => {
+tagItems.forEach(item => {
         item.addEventListener('click', (e) => {
           e.stopPropagation();
-          const tag = (item ).dataset.tag;
+          const tag = item.dataset.tag;
           if (activeTag === tag) {
             activeTag = null;
             tagItems.forEach(t => t.classList.remove('active'));
-            cards.forEach(c => ((c ).style.display = ''));
+            cards.forEach(c => (c.style.display = ''));
           } else {
             activeTag = tag ?? null;
             tagItems.forEach(t => t.classList.remove('active'));
             item.classList.add('active');
             cards.forEach(c => {
-              const cardTag = (c ).dataset.tag;
-              (c ).style.display = (cardTag === tag) ? '' : 'none';
+              const cardTag = c.dataset.tag;
+              c.style.display = (cardTag === tag) ? '' : 'none';
             });
           }
-          tagDropdown.classList.remove('open');
-          navTag.classList.remove('active');
+          // Keep dropdown open after selection
         });
       });
 
