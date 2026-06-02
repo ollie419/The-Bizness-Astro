@@ -1,4 +1,8 @@
-  /* ── CUSTOM FONTS ───────────────────────────────────────── */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* ── CUSTOM FONTS ───────────────────────────────────────── */
   @font-face {
     font-family: 'DIN Alternate';
     src: url('DINAlternate-Bold.woff') format('woff');
