@@ -1,65 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { client } from '../lib/sanity.js';
+import imageUrlBuilder from '@sanity/image-url';
+
+const stories = await client.fetch(`*[_type == "story"]{
+  name,
+  discipline,
+  tag,
+  blurb,
+  slug,
+  portrait
+}`);
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source).url();
+}
 ---
 
 <BaseLayout title="The Bizness">
   <main class="home">
     <div class="grid">
-
-      <!-- Card 1 -->
-      <a href="/story">
-      <article class="card" data-tag="design">
-        <div class="card-img"><img src="/SCAN_1026.JPG" alt="Andu Masebo"></div>
-        <div class="card-label">
-          <div class="card-name">Andu<br>Masebo</div>
-          <div class="card-discipline">Product<br>Designer</div>
-        </div>
-        <div class="card-bar">
-          <p class="card-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet nunc augue, a sagittis lorem pellentesque non. Curabitur vel leo eu nisl pharetra rhoncus. Donec non ornare libero. Cras turpis nulla, tempor nec eros ac, pretium volutpat libero. Nulla et ipsum dolor.</p>
-        </div>
-      </article>
-      </a>
-
-      <!-- Card 2 -->
-      <article class="card" data-tag="photography">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="card" data-tag="music">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="card" data-tag="architecture">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 5 -->
-      <article class="card">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 6 -->
-      <article class="card">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 7 -->
-      <article class="card">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 8 -->
-      <article class="card">
-        <div class="card-img"></div>
-      </article>
-
-      <!-- Card 9 -->
-      <article class="card">
-        <div class="card-img"></div>
-      </article>
-
+      {stories.map((story) => (
+        <a href={`/story/${story.slug.current}`}>
+          <article class="card" data-tag={story.tag}>
+            <div class="card-img">
+              {story.portrait && (
+                <img src={urlFor(story.portrait)} alt={story.name} />
+              )}
+            </div>
+            <div class="card-label">
+              <div class="card-name">{story.name.split(' ').map((word) => <>{word}<br/></>)}</div>
+              <div class="card-discipline">{story.discipline.split(' ').map((word) => <>{word}<br/></>)}</div>
+            </div>
+            <div class="card-bar">
+              <p class="card-blurb">{story.blurb}</p>
+            </div>
+          </article>
+        </a>
+      ))}
     </div>
   </main>
 </BaseLayout>
