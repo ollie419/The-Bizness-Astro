@@ -1,13 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { client } from '../lib/sanity.js';
+import imageUrlBuilder from '@sanity/image-url';
+
+const moodboard = await client.fetch(`*[_type == "moodboard"][0]{
+  curator,
+  images
+}`);
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source).url();
+}
 ---
 
 <BaseLayout title="The Bizness — IMG">
   <main class="img-page">
-    <p class="img-curated">Curated by X</p>
+    <p class="img-curated">Curated by {moodboard?.curator}</p>
     <div class="img-grid" id="imgGrid">
-      {Array.from({ length: 50 }).map(() => (
-        <div class="img-item"></div>
+      {moodboard?.images?.map((image) => (
+        <div class="img-item">
+          <img src={urlFor(image)} alt="" />
+        </div>
       ))}
     </div>
   </main>
@@ -23,6 +37,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     document.getElementById('imgGrid')?.addEventListener('click', (e) => {
       const item = e.target.closest('.img-item');
       if (!item) return;
+      const img = item.querySelector('img');
+      if (!img) return;
+      lightboxImg.style.backgroundImage = `url(${img.src})`;
+      lightboxImg.style.backgroundSize = 'contain';
+      lightboxImg.style.backgroundRepeat = 'no-repeat';
+      lightboxImg.style.backgroundPosition = 'center';
       const w = item.offsetWidth;
       const h = item.offsetHeight;
       const ratio = w / h;

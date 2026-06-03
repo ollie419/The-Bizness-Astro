@@ -424,15 +424,6 @@ html {
     margin-bottom: 1.4em;
   }
 
-  
-
-  .story-bottom-card {
-    width: 625px;
-    height: 500px;
-    background: #ffffff;
-    margin-top: 30px;
-  }
-
   .share-btn {
     position: fixed;
     top: 800px;
@@ -483,7 +474,8 @@ html {
  /* ── SIDE ICONS ──────────────────────────────────────────── */
   .side-icon {
     position: fixed;
-    top: 450px;
+    top: 50vh;
+    transform: translateY(-50%);
     z-index: 80;
     color: var(--blue);
     display: flex;
@@ -680,3 +672,39 @@ html {
   @media (max-width: 900px) {
     .grid { grid-template-columns: repeat(2, 1fr); }
   }
+  /* ── SCROLLBAR ───────────────────────────────────────────── */
+  html {
+    scrollbar-gutter: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 255, 0.3);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 255, 0.6);
+  }
+  /* ── HOME BUTTON ─────────────────────────────────────────── */
+  .home-btn {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 80px;
+  }
+  .home-btn a {
+    font-family: var(--font-nav);
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--blue);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+  .home-btn a:hover { opacity: 0.6; }
