@@ -1,5 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { client } from '../lib/sanity.js';
+import imageUrlBuilder from '@sanity/image-url';
+
+const info = await client.fetch(`*[_type == "info"][0]{
+  portrait,
+  about,
+  enquiriesText
+}`);
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source).url();
+}
 ---
 
 <BaseLayout title="The Bizness — Info">

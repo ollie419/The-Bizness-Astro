@@ -635,19 +635,21 @@ html {
     margin: 0 auto;
   }
 
-  .img-item {
+ .img-item {
     break-inside: avoid;
     margin-bottom: 10px;
     cursor: pointer;
     overflow: hidden;
     background: #cccccc;
   }
+  .img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-  .img-item:nth-child(5n+1) { height: 150px; }
-  .img-item:nth-child(5n+2) { height: 112px; }
-  .img-item:nth-child(5n+3) { height: 175px; }
-  .img-item:nth-child(5n+4) { height: 125px; }
-  .img-item:nth-child(5n+5) { height: 137px; }
+  .img-item { height: auto; }
 
   /* Lightbox */
   .lightbox {
