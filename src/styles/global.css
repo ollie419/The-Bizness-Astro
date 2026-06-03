@@ -1,11 +1,7 @@
-html {
-  scrollbar-gutter: stable;
-}
-
 /* ── CUSTOM FONTS ───────────────────────────────────────── */
   @font-face {
     font-family: 'DIN Alternate';
-    src: url('DINAlternate-Bold.woff') format('woff');
+    src: url('/DINAlternate-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
   }
@@ -81,7 +77,6 @@ html {
   img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* ── NAV ─────────────────────────────────────────────────── */
-  /* ── NAV ─────────────────────────────────────────────────── */
 
   /* Corner nav labels — fixed to viewport */
   .nav-corner {
@@ -184,15 +179,6 @@ html {
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-  .nav-logo.hidden {
-    display: none;
-  }
-
-  
-  .page { display: none; }
-  .page.active { display: block; }
-
-  
 
   /* ── HOMEPAGE ────────────────────────────────────────────── */
 .home {
@@ -255,31 +241,7 @@ html {
   .card:hover .card-bar { transform: translateY(0); }
   .card:hover .card-img { filter: none; }
 
-  /* Text overlay — sits outside bar for at-rest state */
-  .card-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 10px;
-    z-index: 2;
-    transform: translateY(100%);
-    transition: transform 0.35s ease;
-    pointer-events: none;
-  }
-  .card:hover .card-overlay { transform: translateY(0); }
-
-  .card-overlay-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 20px;
-  }
-
+  
   /* At rest: name/discipline float at bottom, no background */
   .card-label {
     position: absolute;
@@ -445,17 +407,6 @@ html {
     transition: opacity 0.2s ease;
   }
   .share-btn:hover { opacity: 0.8; }
-
-
-  /* ── ARTICLE BODY ─────────────────────────────────────────── */
-  .story-body p {
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 1.85;
-    color: var(--blue);
-    margin-bottom: 24px;
-  }
 
 /* pull quote */
   .pull-quote {
@@ -639,8 +590,6 @@ html {
     height: auto;
     display: block;
   }
-
-  .img-item { height: auto; }
 
   /* Lightbox */
   .lightbox {
