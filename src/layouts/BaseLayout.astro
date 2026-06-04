@@ -18,6 +18,40 @@ const { title = 'The Bizness' } = Astro.props;
   <body>
     <Nav />
     <SideIcons />
+
+    <!-- Mobile nav -->
+    <header class="mobile-nav">
+      <a class="mobile-logo" href="/">The Bizness</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu"></button>
+    </header>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"></button>
+      <nav class="mobile-menu-links">
+        <a href="/">Home</a>
+        <a href="/info">Info</a>
+        <a href="/img">IMG</a>
+        <a href="#">Projects</a>
+      </nav>
+    </div>
+
+    <!-- Mobile bottom bar -->
+    <div class="mobile-bottom">
+      <button class="mobile-bottom-moon" id="mobileMoon" aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a class="mobile-bottom-ig" href="https://www.instagram.com/ollie.ade" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+    </div>
+
     <slot />
 
     <script>
@@ -110,7 +144,39 @@ tagItems.forEach(item => {
         window.location.href = '/img';
       });
 
-      
+      // Mobile menu
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      mobileMenuBtn?.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+      });
+      mobileMenuClose?.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+
+      // Mobile dark mode
+      const mobileMoon = document.getElementById('mobileMoon');
+      mobileMoon?.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('dark', document.body.classList.contains('dark') ? '1' : '0');
+      });
+
+      // Mobile card tap — first tap shows blurb, second tap navigates
+      document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (window.innerWidth > 768) return;
+          if (!card.classList.contains('tapped')) {
+            e.preventDefault();
+            card.classList.add('tapped');
+            const bar = card.querySelector('.card-bar');
+            const label = card.querySelector('.card-label');
+            if (bar) bar.style.transform = 'translateY(0)';
+            if (label) label.style.transform = 'translateY(-120px)';
+          }
+        });
+      });
     </script>
   </body>
 </html>
