@@ -27,9 +27,8 @@ const { title = 'The Bizness' } = Astro.props;
 
     <!-- Mobile menu overlay -->
     <div class="mobile-menu" id="mobileMenu">
-      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"></button>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
       <nav class="mobile-menu-links">
-        <a href="/">Home</a>
         <a href="/info">Info</a>
         <a href="/img">IMG</a>
         <a href="#">Projects</a>
@@ -164,11 +163,24 @@ tagItems.forEach(item => {
       });
 
       // Mobile card tap — first tap shows blurb, second tap navigates
+      function resetCards(except) {
+        document.querySelectorAll('.card').forEach(c => {
+          if (c === except) return;
+          c.classList.remove('tapped');
+          const bar = c.querySelector('.card-bar');
+          const label = c.querySelector('.card-label');
+          if (bar) bar.style.transform = 'translateY(100%)';
+          if (label) label.style.transform = 'translateY(0)';
+        });
+      }
+
       document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', (e) => {
           if (window.innerWidth > 768) return;
           if (!card.classList.contains('tapped')) {
             e.preventDefault();
+            e.stopPropagation();
+            resetCards(card);
             card.classList.add('tapped');
             const bar = card.querySelector('.card-bar');
             const label = card.querySelector('.card-label');
@@ -176,6 +188,11 @@ tagItems.forEach(item => {
             if (label) label.style.transform = 'translateY(-120px)';
           }
         });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) return;
+        if (!e.target.closest('.card')) resetCards(null);
       });
     </script>
   </body>
