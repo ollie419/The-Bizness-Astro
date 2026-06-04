@@ -911,22 +911,25 @@
   }
 
   .info-top {
-    flex-direction: column;
+    flex-direction: row;
     padding-left: 16px;
     padding-right: 16px;
-    align-items: center;
+    align-items: flex-end;
+    gap: 16px;
   }
 
   .info-portrait {
     width: 30%;
+    flex-shrink: 0;
     height: auto;
     aspect-ratio: 4/5;
   }
 
   .info-text {
-    width: 100%;
+    flex: 1;
     height: auto;
-    padding: 16px 60px 0;
+    padding: 0;
+    justify-content: flex-end;
   }
 
   .info-form-wrap {
