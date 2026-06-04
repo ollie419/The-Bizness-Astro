@@ -918,7 +918,7 @@
   }
 
   .info-portrait {
-    width: 60%;
+    width: 30%;
     height: auto;
     aspect-ratio: 4/5;
   }
@@ -926,7 +926,7 @@
   .info-text {
     width: 100%;
     height: auto;
-    padding: 16px 0 0;
+    padding: 16px 60px 0;
   }
 
   .info-form-wrap {
@@ -959,3 +959,8 @@
     padding: 40px 0 60px;
   }
 }
+.credit-right {
+    text-align: right;
+    display: block;
+    width: 100%;
+  }
