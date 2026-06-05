@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { client } from '../lib/sanity.js';
 import imageUrlBuilder from '@sanity/image-url';
 
-const stories = await client.fetch(`*[_type == "story"]{
+const stories = await client.fetch(`*[_type == "story"] | order(_createdAt desc) {
   name,
   discipline,
   tag,
