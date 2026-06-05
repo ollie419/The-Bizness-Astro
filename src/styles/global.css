@@ -358,7 +358,7 @@
     font-weight: 600;
     color: var(--blue);
     line-height: 1;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     font-variation-settings: 'wdth' 75, 'wght' 600;
   } 
   .story-meta-bottom {
