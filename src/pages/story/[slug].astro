@@ -49,10 +49,8 @@ function urlFor(source) {
           <span>{story.name}</span>
           <span>{story.discipline}</span>
           <span>{story.location}</span>
-        </div>
-        <div class="story-meta-bottom">
-          {story.imageCredits && <span>Images: {story.imageCredits}</span>}
-          {story.textCredits && <span>Text: {story.textCredits}</span>}
+          {story.imageCredits && <span class="credit-right">Images: {story.imageCredits}</span>}
+          {story.textCredits && <span class="credit-right">Text: {story.textCredits}</span>}
         </div>
       </div>
     </div>
@@ -60,9 +58,14 @@ function urlFor(source) {
     <div class="story-body">
       <h1 class="story-title">{story.title}</h1>
       <div class="story-text">
-        {story.body?.map((block) => (
-          <p>{block.children?.map((child) => child.text).join('')}</p>
-        ))}
+        {story.body?.map((block) => {
+          if (block._type === 'block' && block.children) {
+            const text = block.children.map((child) => child.text).join('');
+            if (!text) return <br />;
+            return <p>{text}</p>;
+          }
+          return null;
+        })}
       </div>
     </div>
 
