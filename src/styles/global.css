@@ -484,7 +484,8 @@
   .info-top {
     display: flex;
     align-items: flex-start;
-    padding-left: 546px;
+    padding-left: clamp(140px, 38vw, 546px);
+    padding-right: 120px;
   }
 
  .info-portrait {
@@ -521,7 +522,8 @@
   }
 
   .info-form-wrap {
-    padding-left: 546px;
+    padding-left: clamp(140px, 38vw, 546px);
+    padding-right: 120px;
     margin-top: 30px;
   }
 
@@ -607,7 +609,8 @@
   .img-grid {
     columns: 5;
     column-gap: 10px;
-    width: 900px;
+    width: calc(100vw - 240px);
+    max-width: 900px;
     margin: 0 auto;
   }
 
