@@ -186,15 +186,25 @@
     padding-bottom: 80px;
     padding-left: 120px;
     padding-right: 120px;
+    box-sizing: border-box;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 400px));
+    grid-template-columns: repeat(3, 1fr);
     gap: clamp(16px, 3vw, 40px);
-    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 1280px;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    cursor: pointer;
+    container-type: inline-size;
   }
 
   .card {
