@@ -25,7 +25,9 @@ function urlFor(source) {
         )}
       </div>
       <div class="info-text">
-        {info?.about && <p>{info.about}</p>}
+        {info?.about && info.about.split('\n').map((line) => 
+          line ? <p>{line}</p> : <br />
+        )}
       </div>
     </div>
 
