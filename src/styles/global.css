@@ -188,16 +188,19 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 400px);
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(0, 400px));
+    gap: clamp(16px, 3vw, 40px);
     justify-content: center;
     margin: 0 auto;
+    width: calc(100vw - 240px);
+    max-width: 1280px;
   }
 
   .card {
     position: relative;
-    width: 400px;
-    height: 500px;
+    width: 100%;
+    aspect-ratio: 4/5;
+    max-width: 400px;
     overflow: hidden;
     cursor: pointer;
     container-type: inline-size;
@@ -664,6 +667,9 @@
 .mobile-bottom {
   display: none;
 }
+
+
+
 
 /* ── MOBILE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
