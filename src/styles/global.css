@@ -60,6 +60,25 @@
     height: 0.25pt;
   }
 
+  /* Bottom corner lines — above PROJECTS and IMG */
+  .nav-projects::before,
+  .nav-img::before {
+    content: '';
+    position: absolute;
+    height: 0.25pt;
+    background: var(--blue);
+    top: -20px;
+    pointer-events: none;
+  }
+  .nav-projects::before {
+    left: 0;
+    width: 60px;
+  }
+  .nav-img::before {
+    right: 0;
+    width: 60px;
+  }
+
   /* ── DARK MODE ───────────────────────────────────────────── */
   body.dark {
     --bg:   #000000;
@@ -680,7 +699,12 @@
 }
 
 
-
+/* ── TABLET / SMALL DESKTOP ─────────────────────────────── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* ── MOBILE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
