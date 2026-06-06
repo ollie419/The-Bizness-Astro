@@ -511,7 +511,7 @@
     width: 100%;
     max-width: 500px;
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
   }
   .info-text p {
     font-family: var(--font-nav);
