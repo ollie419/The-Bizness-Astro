@@ -671,13 +671,14 @@
     font-size: 10pt;
     font-weight: 300;
     color: var(--blue);
-    background: transparent;
+    background: var(--bg);
     border: 0.5px solid var(--blue);
     padding: 4px 12px;
     cursor: pointer;
     appearance: none;
     text-align: center;
     font-variation-settings: 'wdth' 100, 'wght' 300;
+    width: 160px;
   }
 
 

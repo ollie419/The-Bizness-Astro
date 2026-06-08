@@ -25,6 +25,7 @@ function urlFor(source) {
       </p>
       {moodboards.length > 1 && (
         <select class="img-archive" id="archiveSelect">
+          <option value="" disabled selected>Archive</option>
           {moodboards.map((m, i) => (
             <option value={i}>{m.title || m.date}</option>
           ))}
@@ -53,11 +54,11 @@ function urlFor(source) {
     const lightboxImg = document.getElementById('lightboxImg');
 
     function urlFor(ref) {
-      const id = ref.asset._ref
-        .replace('image-', '')
-        .replace(/-(\w+)$/, '.$1')
-        .replace(/-/g, '/');
-      return `https://cdn.sanity.io/images/${builderConfig.projectId}/${builderConfig.dataset}/${id}`;
+      const assetRef = ref.asset._ref;
+      const parts = assetRef.replace('image-', '').split('-');
+      const extension = parts.pop();
+      const id = parts.join('-');
+      return `https://cdn.sanity.io/images/${builderConfig.projectId}/${builderConfig.dataset}/${id}.${extension}`;
     }
 
     function renderMoodboard(index) {
