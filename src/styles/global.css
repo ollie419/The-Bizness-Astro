@@ -1,12 +1,4 @@
-/* ── CUSTOM FONTS ───────────────────────────────────────── */
-  @font-face {
-    font-family: 'DIN Alternate';
-    src: url('/DINAlternate-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  /* ── TOKENS ─────────────────────────────────────────────── */
+/* ── TOKENS ─────────────────────────────────────────────── */
 :root {
     --bg:          #e6e6e6;
     --blue:        #0000ff;
@@ -82,9 +74,6 @@
   body.dark {
     --bg:   #000000;
     --blue: #ffffff;
-  }
-  body.dark .card-bar {
-    background: rgba(0, 0, 255, 0.7);
   }
 
   /* ── RESET ───────────────────────────────────────────────── */
@@ -214,15 +203,6 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .card {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    cursor: pointer;
-    container-type: inline-size;
   }
 
   .card {
@@ -882,14 +862,37 @@
     align-items: center;
   }
 
-  /* Logo — static small on all pages */
+  /* Logo — large on homepage, shrinks to nav on scroll */
   .nav-logo {
-    display: none;
+    display: block;
+    font-size: 80px;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-logo.scrolled {
+    font-size: 16px;
+    top: 16px;
+    left: 16px;
+    transform: none;
+    letter-spacing: 0.08em;
+    text-decoration: underline;
+  }
+  /* Hide static mobile nav logo when big logo is present */
+  .mobile-logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .mobile-logo.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   /* Homepage */
   .home {
-    padding-top: 80px;
+    padding-top: 320px;
     padding-bottom: 80px;
     padding-left: 16px;
     padding-right: 16px;
