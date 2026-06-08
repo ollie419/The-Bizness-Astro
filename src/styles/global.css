@@ -737,16 +737,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .card-bar {
-    height: 160px;
-  }
-  .card-name,
-  .card-discipline {
-    font-size: 11pt;
+    height: 120px;
   }
   .card-blurb {
     font-size: 7pt;
     line-height: 1.3;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 }
 
@@ -926,10 +922,6 @@
     margin-top: 10px;
     line-height: 1.4;
   }
-  .card-name, .card-discipline {
-    font-size: 10pt;
-  }
-
   /* Story page */
   .story {
     padding-top: 72px;
