@@ -878,7 +878,7 @@
   /* Logo — large on homepage, shrinks to top centre on scroll */
   .nav-logo {
     display: block;
-    font-size: 60px;
+    font-size: 30px;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
