@@ -1043,6 +1043,8 @@
 
   .info-portrait {
     width: 50%;
+    aspect-ratio: 4/5;
+    height: auto;
   }
 
   .info-text {
