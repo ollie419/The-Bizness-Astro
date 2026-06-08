@@ -49,14 +49,16 @@ function urlFor(source) {
           <span>{story.name}</span>
           <span>{story.discipline}</span>
           <span>{story.location}</span>
-          {story.imageCredits && <span class="credit-right">Images: {story.imageCredits}</span>}
-          {story.textCredits && <span class="credit-right">Text: {story.textCredits}</span>}
         </div>
       </div>
     </div>
 
     <div class="story-body">
       <h1 class="story-title">{story.title}</h1>
+      <div class="story-credits">
+        {story.imageCredits && <span>Images: {story.imageCredits}</span>}
+        {story.textCredits && <span>Text: {story.textCredits}</span>}
+      </div>
       <div class="story-text">
         {story.body?.map((block) => {
           if (block._type === 'block' && block.children) {
