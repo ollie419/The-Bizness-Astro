@@ -9,7 +9,7 @@
     --font-body:   'Helvetica Neue', Helvetica, Arial, sans-serif;
 
     --pad:         40px;
-    --logo-large:  130px;
+    --logo-large:  160px;
     --logo-small:  14px;
   }
 
@@ -161,7 +161,7 @@
   /* Centre logo — shrinks on scroll */
   .nav-logo {
     position: fixed;
-    top: 200px;
+    top: 140px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -189,7 +189,7 @@
 
   /* ── HOMEPAGE ────────────────────────────────────────────── */
 .home {
-    padding-top: 430px;
+    padding-top: 300px;
     padding-bottom: 80px;
     padding-left: 120px;
     padding-right: 120px;
@@ -865,8 +865,8 @@
   /* Logo — large on homepage, shrinks to top centre on scroll */
   .nav-logo {
     display: block;
-    font-size: 80px;
-    top: 200px;
+    font-size: 100px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     letter-spacing: 0.02em;
@@ -892,7 +892,7 @@
 
   /* Homepage */
   .home {
-    padding-top: 320px;
+    padding-top: 220px;
     padding-bottom: 80px;
     padding-left: 16px;
     padding-right: 16px;
