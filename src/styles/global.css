@@ -878,7 +878,7 @@
   /* Logo — large on homepage, shrinks to top centre on scroll */
   .nav-logo {
     display: block;
-    font-size: 30px;
+    font-size: 50px;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
@@ -905,7 +905,7 @@
 
   /* Homepage */
   .home {
-    padding-top: 220px;
+    padding-top: 200px;
     padding-bottom: 80px;
     padding-left: 16px;
     padding-right: 16px;
