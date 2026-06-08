@@ -89,7 +89,6 @@ const { title = 'The Bizness' } = Astro.props;
     navLogo.style.top = top + 'px';
 
     if (isMobile) {
-      const leftProgress = progress;
       if (progress >= 1) {
         navLogo.style.left = '16px';
         navLogo.style.transform = 'none';
@@ -167,7 +166,6 @@ tagItems.forEach(item => {
 
       // Mobile menu
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenuClose = document.getElementById('mobileMenuClose');
       const mobileMenu = document.getElementById('mobileMenu');
 
       mobileMenuBtn?.addEventListener('click', (e) => {
@@ -214,7 +212,7 @@ tagItems.forEach(item => {
             const bar = card.querySelector('.card-bar');
             const label = card.querySelector('.card-label');
             if (bar) bar.style.transform = 'translateY(0)';
-            if (label) label.style.transform = 'translateY(-120px)';
+            if (label) label.style.transform = 'translateY(-42cqi)';
           }
         });
       });

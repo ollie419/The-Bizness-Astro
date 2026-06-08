@@ -240,7 +240,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 180px;
+    height: 45cqi;
     background: #0000ff;
     transform: translateY(100%);
     transition: transform 0.35s ease;
@@ -253,7 +253,6 @@
   .card:hover .card-bar { transform: translateY(0); }
   .card:hover .card-img { filter: none; }
 
-  
   /* At rest: name/discipline float at bottom, no background */
   .card-label {
     position: absolute;
@@ -268,7 +267,7 @@
     transition: transform 0.35s ease;
   }
   .card:hover .card-label {
-    transform: translateY(-120px);
+    transform: translateY(-42cqi);
   }
 
   .card-name {
