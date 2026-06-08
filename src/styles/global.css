@@ -579,7 +579,7 @@
   .info-field input { height: 36px; }
   .info-field textarea { height: 100px; }
 
-  .info-send {
+.info-send {
     font-family: var(--font-nav);
     font-size: 8pt;
     font-weight: 300;
@@ -590,10 +590,10 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    text-align: right;
-    width: min(800px, calc(100vw - 240px));
+    text-align: center;
+    width: min(600px, calc(100vw - 240px));
     display: block;
-    margin-top: 4px;
+    margin-top: 8px;
   }
   .info-send:hover { opacity: 0.6; }
 
