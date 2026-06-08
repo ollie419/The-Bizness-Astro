@@ -862,7 +862,7 @@
     align-items: center;
   }
 
-  /* Logo — large on homepage, shrinks to nav on scroll */
+  /* Logo — large on homepage, shrinks to top centre on scroll */
   .nav-logo {
     display: block;
     font-size: 80px;
@@ -871,12 +871,11 @@
     transform: translateX(-50%);
     letter-spacing: 0.02em;
     text-decoration: none;
+    transition: font-size 0.3s ease, top 0.3s ease;
   }
   .nav-logo.scrolled {
     font-size: 16px;
     top: 16px;
-    left: 16px;
-    transform: none;
     letter-spacing: 0.08em;
     text-decoration: underline;
   }

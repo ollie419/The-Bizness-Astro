@@ -73,34 +73,17 @@ const { title = 'The Bizness' } = Astro.props;
       let isHomePage = window.location.pathname === '/';
 
       function updateLogo() {
-    if (!isHomePage) return;
-    const isMobile = window.innerWidth <= 768;
-    const largeSize = isMobile ? 80 : logoLargeSize;
-    const smallSize = isMobile ? 16 : logoSmallSize;
-    const topStart = isMobile ? 180 : 200;
-    const topEnd = isMobile ? 16 : 40;
-
-    const y = window.scrollY;
-    const progress = Math.min(Math.max((y - shrinkStart) / (shrinkEnd - shrinkStart), 0), 1);
-    const size = largeSize - (largeSize - smallSize) * progress;
-    const top = topStart - (topStart - topEnd) * progress;
-
-    navLogo.style.fontSize = size + 'px';
-    navLogo.style.top = top + 'px';
-
-    if (progress >= 1) {
-      navLogo.classList.add('scrolled');
-    } else {
-      navLogo.classList.remove('scrolled');
-    }
-  }
+        if (!isHomePage) return;
+        const y = window.scrollY;
+        if (y > 200) {
+          navLogo.classList.add('scrolled');
+        } else {
+          navLogo.classList.remove('scrolled');
+        }
+      }
 
       if (!isHomePage && navLogo) {
         navLogo.classList.add('scrolled');
-        navLogo.style.fontSize = window.innerWidth <= 768 ? '16px' : '14px';
-        navLogo.style.top = window.innerWidth <= 768 ? '16px' : '40px';
-        navLogo.style.left = '50%';
-        navLogo.style.transform = 'translateX(-50%)';
       }
 
       window.addEventListener('scroll', updateLogo, { passive: true });
