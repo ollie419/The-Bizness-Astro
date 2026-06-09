@@ -183,8 +183,6 @@
     font-size: var(--logo-small);
     top: var(--pad);
     letter-spacing: 0.12em;
-    text-decoration: underline;
-    text-underline-offset: 4px;
   }
 
   /* ── HOMEPAGE ────────────────────────────────────────────── */
