@@ -165,10 +165,9 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    font-family: 'RX100', var(--font-nav);
+    font-family: 'Satoshi', var(--font-nav);
     font-size: var(--logo-large);
-    font-weight: 700;
-    font-variation-settings: normal;
+    font-weight: 400;
     color: var(--blue);
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -356,14 +355,14 @@
     gap: 2px;
   }
   .story-meta span {
-    font-family: var(--font-nav);
+    font-family: 'Noto Sans', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
     line-height: 1.4;
   }
   .story-title {
-    font-family: 'Cabinet Grotesk', var(--font-nav);
+    font-family: 'Roboto', sans-serif;
     font-size: 20pt;
     font-weight: 600;
     color: var(--blue);
@@ -397,8 +396,8 @@
   }
 
   .story-text {
-    font-family: var(--font-body);
-    font-size: 10pt;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12pt;
     font-weight: 300;
     line-height: 1.7;
     color: var(--blue);
