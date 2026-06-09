@@ -4,7 +4,7 @@
     --blue:        #0000ff;
     --ink:         #111111;
 
-    --font-nav:    'acumin-variable-concept', sans-serif;
+    --font-nav:    'Satoshi', sans-serif;
     --font-serif:  'Cormorant Garamond', Georgia, serif;
     --font-body:   'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -503,7 +503,7 @@
     text-align: center;
   }
   .info-text p {
-    font-family: var(--font-nav);
+    font-family: 'Noto Sans', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
@@ -524,7 +524,7 @@
   }
 
   .info-enquiry {
-    font-family: var(--font-nav);
+    font-family: 'Noto Sans', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
@@ -595,7 +595,7 @@
 
   .img-curated {
     text-align: center;
-    font-family: var(--font-nav);
+    font-family: 'Noto Sans', sans-serif;
     font-size: 14pt;
     font-weight: 300;
     color: var(--blue);
