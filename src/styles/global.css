@@ -6,7 +6,7 @@
 
     --font-nav:    'Satoshi', sans-serif;
     --font-serif:  'Cormorant Garamond', Georgia, serif;
-    --font-body:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body:   'Noto Sans', sans-serif;
 
     --pad:         40px;
     --logo-large:  80px;
@@ -290,7 +290,7 @@
   }
 
 .card-blurb {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 10pt;
     font-weight: 300;
     color: #ffffff;
