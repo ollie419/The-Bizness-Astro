@@ -6,12 +6,24 @@
 
     --font-nav:    'Satoshi', sans-serif;
     --font-serif:  'Cormorant Garamond', Georgia, serif;
-    --font-body:   'Noto Sans', sans-serif;
+    --font-body:   'acumin-pro', sans-serif;
 
     --pad:         40px;
     --logo-large:  80px;
     --logo-small:  14px;
   }
+
+  .tag-item,
+.card-name, .card-discipline,
+.card-blurb,
+.story-meta span, .story-text, .story-credits span,
+.info-text p, .info-enquiry,
+.info-field label, .info-field input, .info-field textarea, .info-send,
+.img-curated, .img-archive,
+.mobile-menu-links a {
+  font-family: 'acumin-pro', sans-serif;
+  font-weight: 200;
+}
 
   /* ── FONT VARIATION ─────────────────────────────────────── */
   /* SemiCondensed Light — card overlays and body text */
@@ -355,7 +367,7 @@
     gap: 2px;
   }
   .story-meta span {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'acumin-pro', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
@@ -388,7 +400,7 @@
     margin-bottom: 24px;
   }
   .story-credits span {
-    font-family: var(--font-nav);
+    font-family: 'acumin-pro', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
@@ -396,7 +408,7 @@
   }
 
   .story-text {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'acumin-pro', sans-serif;
     font-size: 12pt;
     font-weight: 300;
     line-height: 1.7;
@@ -464,26 +476,27 @@
   .side-icon:hover { opacity: 0.6; }
   .side-moon { left: 60px; transform: translateX(-50%) translateY(-50%); }
   .side-ig   { left: calc(100vw - 60px); transform: translateX(-50%) translateY(-50%); }
-  /* ── INFO PAGE ───────────────────────────────────────────── */
+/* ── INFO PAGE ───────────────────────────────────────────── */
   .info-page {
-    padding-top: 150px;
+    padding-top: 180px;
     padding-bottom: 80px;
   }
 
   .info-top {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 120px;
-    padding-right: 120px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    width: 600px;
+    margin: 0 auto;
   }
 
- .info-portrait {
+.info-portrait {
     width: 320px;
     height: 400px;
     flex-shrink: 0;
-    background: #ff00ff;
     overflow: hidden;
+    background: #FF69B4;
   }
   .info-portrait img {
     width: 100%;
@@ -492,18 +505,14 @@
   }
 
   .info-text {
-    padding-left: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: auto;
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
-    text-align: center;
+    flex: 1;
+    text-align: left;
   }
   .info-text p {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'acumin-pro', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
@@ -514,78 +523,13 @@
     margin-bottom: 8px;
   }
 
-  .info-form-wrap {
-    padding-left: 120px;
-    padding-right: 120px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .info-enquiry {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'acumin-pro', sans-serif;
     font-size: 8pt;
     font-weight: 300;
     color: var(--blue);
-    margin-bottom: 20px;
+    margin-top: 16px;
   }
-
-  .info-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: min(600px, calc(100vw - 240px));
-  }
-
-  .info-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .info-field label {
-    font-family: var(--font-nav);
-    font-size: 8pt;
-    font-weight: 300;
-    color: var(--blue);
-    margin-bottom: 0;
-  }
-
-  .info-field input,
-  .info-field textarea {
-    background: transparent;
-    border: 0.25px solid white;
-    outline: none;
-    font-family: var(--font-nav);
-    font-size: 8pt;
-    font-weight: 300;
-    color: var(--blue);
-    padding: 8px;
-    resize: none;
-    width: 100%;
-  }
-
-  .info-field input { height: 36px; }
-  .info-field textarea { height: 100px; }
-
-.info-send {
-    font-family: var(--font-nav);
-    font-size: 8pt;
-    font-weight: 300;
-    color: var(--blue);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    text-align: center;
-    width: min(600px, calc(100vw - 240px));
-    display: block;
-    margin-top: 8px;
-  }
-  .info-send:hover { opacity: 0.6; }
 
   /* ── IMG PAGE ────────────────────────────────────────────── */
   .img-page {
@@ -595,7 +539,7 @@
 
   .img-curated {
     text-align: center;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'acumin-pro', sans-serif;
     font-size: 14pt;
     font-weight: 300;
     color: var(--blue);
