@@ -22,7 +22,7 @@ const story = await client.fetch(`*[_type == "story" && slug.current == $slug][0
   portrait,
   slug
 }`, { slug });
-
+ 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source).url();
@@ -30,13 +30,6 @@ function urlFor(source) {
 ---
 
 <BaseLayout title={`The Bizness — ${story.name}`}>
-  <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href)" aria-label="Share">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 3v13M7 8l5-5 5 5"/>
-      <path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
-    </svg>
-  </button>
-
   <main class="story">
     <div class="story-top">
       <div class="story-portrait">
@@ -54,7 +47,15 @@ function urlFor(source) {
     </div>
 
     <div class="story-body">
-      <h1 class="story-title">{story.title}</h1>
+      <div class="story-title-row">
+        <h1 class="story-title">{story.title}</h1>
+        <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href)" aria-label="Share">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v13M7 8l5-5 5 5"/>
+            <path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
+          </svg>
+        </button>
+      </div>
       <div class="story-credits">
         {story.imageCredits && <span>Images: {story.imageCredits}</span>}
         {story.textCredits && <span>Text: {story.textCredits}</span>}

@@ -419,11 +419,16 @@ font-family: 'Space Grotesk', sans-serif;
     margin-bottom: 1.4em;
   }
 
+  .story-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .story-title-row .story-title {
+    margin-bottom: 0;
+  }
   .share-btn {
-    position: fixed;
-    top: 800px;
-    left: 450px;
-    z-index: 50;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -433,11 +438,9 @@ font-family: 'Space Grotesk', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-nav);
-    font-size: 9pt;
-    font-weight: 300;
     color: #ffffff;
     transition: opacity 0.2s ease;
+    flex-shrink: 0;
   }
   .share-btn:hover { opacity: 0.8; }
 
@@ -935,12 +938,6 @@ font-family: 'Space Grotesk', sans-serif;
   .story-title {
     font-size: 16pt;
     margin-bottom: 16px;
-  }
-
-  .share-btn {
-    top: 16px;
-    left: auto;
-    right: 20px;
   }
 
   /* Info page */
