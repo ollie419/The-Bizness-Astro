@@ -429,8 +429,8 @@ font-family: 'Space Grotesk', sans-serif;
     margin-bottom: 0;
   }
   .share-btn {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--blue);
     border: none;
