@@ -177,9 +177,9 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    font-family: 'Satoshi', var(--font-nav);
+    font-family: 'Space Grotesk', var(--font-nav);
     font-size: var(--logo-large);
-    font-weight: 400;
+    font-weight: 500;
     color: var(--blue);
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -374,13 +374,12 @@
     line-height: 1.4;
   }
   .story-title {
-    font-family: 'Roboto', sans-serif;
+font-family: 'Space Grotesk', sans-serif;
     font-size: 20pt;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--blue);
     line-height: 1;
     margin-bottom: 20px;
-    font-variation-settings: 'wdth' 75, 'wght' 600;
   } 
   .story-meta-bottom {
     display: flex;
