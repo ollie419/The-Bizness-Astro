@@ -940,15 +940,21 @@ font-family: 'Space Grotesk', sans-serif;
     margin-bottom: 16px;
   }
 
-  /* Info page */
+/* Info page */
   .info-page {
     padding-top: 72px;
     padding-bottom: 80px;
   }
 
+.info-top {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+    align-items: center;
+  }
+
   .info-portrait {
-    width: 30%;
-    flex-shrink: 0;
+    width: 60%;
     height: auto;
     aspect-ratio: 4/5;
   }
@@ -957,20 +963,7 @@ font-family: 'Space Grotesk', sans-serif;
     flex: 1;
     height: auto;
     padding: 0;
-    justify-content: flex-end;
-  } 
-
-  .info-form-wrap {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .info-form {
-    width: 100%;
-  }
-
-  .info-send {
-    width: 100%;
+    text-align: center;
   }
 
   /* IMG page */
