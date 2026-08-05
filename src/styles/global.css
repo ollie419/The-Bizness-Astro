@@ -9,7 +9,7 @@
     --font-body:   'acumin-pro', sans-serif;
 
     --pad:         40px;
-    --logo-large:  80px;
+    --logo-large:  100px;
     --logo-small:  14px;
   }
 
@@ -60,7 +60,7 @@
   body::after {
     top: 100px;
     left: 0;
-    right: 0;
+    right: 0px;
     height: 0.25pt;
   }
 
