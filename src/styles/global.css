@@ -411,6 +411,27 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   clear: both;
 }
 
+/* ── STORY PAGE TOP FADE ─────────────────────────────────── */
+body.story-page .nav-logo {
+  mix-blend-mode: normal;
+}
+.story-frosted {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(230, 230, 230, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 89;
+  pointer-events: none;
+}
+body.dark .story-frosted {
+  background: rgba(0, 0, 0, 0.75);
+}
+
 /* ── SIDE ICONS ──────────────────────────────────────────── */
 .side-icon {
   position: fixed;
