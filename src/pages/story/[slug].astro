@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const story = await client.fetch(`*[_type == "story" && slug.current == $slug][0]{
-  name,
+name,
   discipline,
   location,
   title,
@@ -20,7 +20,8 @@ const story = await client.fetch(`*[_type == "story" && slug.current == $slug][0
   imageCredits,
   textCredits,
   portrait,
-  slug
+  slug,
+  tag
 }`, { slug });
  
 const builder = imageUrlBuilder(client);
@@ -74,7 +75,10 @@ function urlFor(source) {
     </div>
 
     </main>
-  <div class="home-btn">
-    <a href="/">← Home</a>
+<div class="story-footer">
+    {story.tag && (
+      <a class="story-tag-link" href={`/?tag=${story.tag}`}>Tag: {story.tag}</a>
+    )}
+    <a class="home-link" href="/">← Home</a>
   </div>
 </BaseLayout>

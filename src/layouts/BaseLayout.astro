@@ -90,12 +90,25 @@ const { title = 'The Bizness' } = Astro.props;
       window.addEventListener('scroll', updateLogo, { passive: true });
       updateLogo();
 
-      // Tag dropdown
+// Tag dropdown
       const navTag = document.querySelector('.nav-tag') ;
       const tagDropdown = document.getElementById('tagDropdown') ;
       const tagItems = document.querySelectorAll('.tag-item');
       const cards = document.querySelectorAll('.card');
       let activeTag = null;
+
+      // Apply tag from URL param on load
+      const urlTag = new URLSearchParams(window.location.search).get('tag');
+      if (urlTag) {
+        activeTag = urlTag;
+        tagItems.forEach(t => {
+          if (t.dataset.tag === urlTag) t.classList.add('active');
+        });
+        cards.forEach(c => {
+          const wrapper = c.closest('a');
+          if (wrapper) wrapper.style.display = (c.dataset.tag === urlTag) ? '' : 'none';
+        });
+      }
 
       navTag?.addEventListener('click', (e) => {
         e.stopPropagation();
