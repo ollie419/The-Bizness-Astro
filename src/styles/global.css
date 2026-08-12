@@ -456,6 +456,9 @@ body.story-page .nav-logo {
 body.dark .story-frosted {
   background: rgba(0, 0, 0, 0.75);
 }
+body.dark .mobile-nav {
+  background: rgba(0, 0, 0, 0.75);
+}
 
 /* ── SIDE ICONS ──────────────────────────────────────────── */
 .side-icon {
@@ -673,12 +676,13 @@ html {
 } 
 
 /* ── MOBILE ──────────────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
-  .nav-corner,
+.nav-corner,
   .side-icon,
   body::before,
-  body::after {
+  body::after,
+  .story-frosted {
     display: none;
   }
 
@@ -690,13 +694,15 @@ html {
     display: flex;
   }
 
-  .mobile-nav {
+.mobile-nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    background: var(--bg);
+    background: rgba(230, 230, 230, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     height: 56px;
     display: flex;
     align-items: center;
@@ -828,10 +834,16 @@ html {
     padding-right: 16px;
   }
 
-  .grid {
+.grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     width: 100%;
+  }
+
+  @media (orientation: landscape) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .card {
@@ -889,11 +901,12 @@ html {
     height: auto;
     aspect-ratio: 4/5;
   }
-  .info-text {
+.info-text {
     flex: 1;
     height: auto;
     padding: 0;
     text-align: center;
+    max-width: 400px;
   }
 
   .img-page {

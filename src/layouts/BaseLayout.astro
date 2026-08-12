@@ -192,9 +192,9 @@ tagItems.forEach(item => {
         });
       }
 
-      document.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', (e) => {
-          if (window.innerWidth > 768) return;
+          if (window.innerWidth > 1024) return;
           if (!card.classList.contains('tapped')) {
             e.preventDefault();
             e.stopPropagation();
@@ -213,7 +213,7 @@ tagItems.forEach(item => {
         if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn')) {
           mobileMenu?.classList.remove('open');
         }
-        if (window.innerWidth <= 768 && !e.target.closest('.card')) {
+        if (window.innerWidth <= 1024 && !e.target.closest('.card')) {
           resetCards(null);
         }
       });
