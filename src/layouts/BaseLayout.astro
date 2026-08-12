@@ -194,7 +194,7 @@ tagItems.forEach(item => {
 
     document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', (e) => {
-          if (window.innerWidth > 1100) return;
+          if (window.innerWidth > 1200) return;
           if (!card.classList.contains('tapped')) {
             e.preventDefault();
             e.stopPropagation();
@@ -213,7 +213,7 @@ tagItems.forEach(item => {
         if (!e.target.closest('.mobile-menu') && !e.target.closest('.mobile-menu-btn')) {
           mobileMenu?.classList.remove('open');
         }
-        if (window.innerWidth <= 1100 && !e.target.closest('.card')) {
+        if (window.innerWidth <= 1200 && !e.target.closest('.card')) {
           resetCards(null);
         }
       });
