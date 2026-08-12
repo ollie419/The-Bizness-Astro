@@ -659,7 +659,7 @@ html {
     grid-template-columns: repeat(2, 1fr);
   }
   .card-bar {
-    height: 180px;
+    height: 140px;
   }
   .card-blurb {
     font-size: 8pt;
