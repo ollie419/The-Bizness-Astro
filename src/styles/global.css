@@ -896,10 +896,16 @@ html {
     padding: 0 20px;
     align-items: center;
   }
-  .info-portrait {
+.info-portrait {
     width: 60%;
     height: auto;
     aspect-ratio: 4/5;
+  }
+
+  @media (orientation: landscape) {
+    .info-portrait {
+      width: 30%;
+    }
   }
 .info-text {
     flex: 1;
