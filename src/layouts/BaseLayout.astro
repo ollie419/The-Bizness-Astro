@@ -27,12 +27,16 @@ const { title = 'The Bizness' } = Astro.props;
     </header>
 
     <!-- Mobile menu overlay -->
-    <div class="mobile-menu" id="mobileMenu">
-      
-      <nav class="mobile-menu-links">
+  <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu-links" id="mobileMenuMain">
+        <a href="#" id="mobileTagsBtn">Tags</a>
         <a href="/info">Info</a>
         <a href="/img">IMG</a>
         <a href="#">Projects</a>
+      </nav>
+      <nav class="mobile-menu-tags" id="mobileMenuTags">
+        <button class="mobile-tags-back" id="mobileTagsBack">←</button>
+        <div id="mobileTagList"></div>
       </nav>
     </div>
 
@@ -159,15 +163,74 @@ tagItems.forEach(item => {
       const mobileMenuClose = document.getElementById('mobileMenuClose');
       const mobileMenu = document.getElementById('mobileMenu');
 
-      mobileMenuBtn?.addEventListener('click', (e) => {
+     mobileMenuBtn?.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = mobileMenu.classList.contains('open');
         if (isOpen) {
           mobileMenu.classList.remove('open');
+          showMainMenu();
         } else {
           mobileMenu.classList.add('open');
         }
       });
+
+      const mobileMenuMain = document.getElementById('mobileMenuMain');
+      const mobileMenuTags = document.getElementById('mobileMenuTags');
+      const mobileTagsBtn = document.getElementById('mobileTagsBtn');
+      const mobileTagsBack = document.getElementById('mobileTagsBack');
+      const mobileTagList = document.getElementById('mobileTagList');
+
+      function showMainMenu() {
+        mobileMenuMain.style.display = 'flex';
+        mobileMenuTags.style.display = 'none';
+      }
+      function showTagMenu() {
+        mobileMenuMain.style.display = 'none';
+        mobileMenuTags.style.display = 'flex';
+      }
+
+      // Populate tag list from existing tag items
+      tagItems.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'mobile-tag-item';
+        btn.textContent = item.dataset.tag;
+        btn.dataset.tag = item.dataset.tag;
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const tag = btn.dataset.tag;
+          // Trigger same filter logic
+          if (activeTag === tag) {
+            activeTag = null;
+            tagItems.forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.mobile-tag-item').forEach(b => b.classList.remove('active'));
+            cards.forEach(c => {
+              const wrapper = c.closest('a');
+              if (wrapper) wrapper.style.display = '';
+            });
+          } else {
+            activeTag = tag;
+            tagItems.forEach(t => t.classList.toggle('active', t.dataset.tag === tag));
+            document.querySelectorAll('.mobile-tag-item').forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+            cards.forEach(c => {
+              const wrapper = c.closest('a');
+              if (wrapper) wrapper.style.display = (c.dataset.tag === tag) ? '' : 'none';
+            });
+          }
+        });
+        mobileTagList.appendChild(btn);
+      });
+
+      mobileTagsBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showTagMenu();
+      });
+
+      mobileTagsBack?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showMainMenu();
+      });
+
+      showMainMenu();
 
       mobileMenu?.addEventListener('click', (e) => {
         e.stopPropagation();
