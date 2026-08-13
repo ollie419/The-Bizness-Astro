@@ -266,7 +266,10 @@ tagItems.forEach(item => {
             const bar = card.querySelector('.card-bar');
             const label = card.querySelector('.card-label');
             if (bar) bar.style.transform = 'translateY(0)';
-            if (label) label.style.transform = 'translateY(-120px)';
+            const barH = bar.offsetHeight;
+            const labelH = label.offsetHeight;
+            const bottomOffset = 20;
+            if (label) label.style.transform = `translateY(-${barH - labelH - bottomOffset}px)`;
           }
         });
       });
