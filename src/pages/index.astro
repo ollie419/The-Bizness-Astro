@@ -16,6 +16,10 @@ const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source).url();
 }
+const splitLast = (t = '') => {
+  const k = t.trim().lastIndexOf(' ');
+  return k === -1 ? [t.trim()] : [t.slice(0, k).trim(), t.slice(k + 1)];
+};
 ---
 
 <BaseLayout title="The Bizness">
@@ -30,8 +34,8 @@ function urlFor(source) {
               )}
             </div>
             <div class="card-label">
-              <div class="card-name">{story.name.split(' ').map((word) => <>{word}<br/></>)}</div>
-              <div class="card-discipline">{story.discipline.split(' ').map((word) => <>{word}<br/></>)}</div>
+              <div class="card-name">{splitLast(story.name).map((line) => <span class="card-line">{line}</span>)}</div>
+              <div class="card-discipline">{splitLast(story.discipline).map((line) => <span class="card-line">{line}</span>)}</div>
             </div>
             <div class="card-bar">
               <p class="card-blurb">{story.blurb}</p>

@@ -40,7 +40,7 @@ body::before {
   left: 0;
 }
 body::after {
-  top: 100px;
+  top: 40px;
   left: 0;
   right: 0;
   height: 0.25pt;
@@ -50,7 +50,7 @@ body::after {
   position: absolute;
   height: 0.25pt;
   background: var(--blue);
-  top: -20px;
+  top: calc(50% - 20px);
   pointer-events: none;
   width: 120px;
 }
@@ -91,8 +91,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nav-corner::before {
   content: '';
   position: absolute;
-  width: 36px;
-  height: 36px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #ffff00;
   z-index: -1;
@@ -102,15 +102,15 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nav-corner:hover::before,
 .nav-corner.active::before { opacity: 1; }
 
-.nav-info    { top: 46px; left: 60px; transform: translateX(-50%); }
-.nav-tag     { top: 46px; left: calc(100vw - 60px); transform: translateX(-50%); }
-.nav-projects{ bottom: 46px; left: 60px; transform: translateX(-50%); }
-.nav-img     { bottom: 46px; left: calc(100vw - 60px); transform: translateX(-50%); }
+.nav-info    { top: 20px; left: 60px; transform: translate(-50%, -50%); }
+.nav-tag     { top: 20px; left: calc(100vw - 60px); transform: translate(-50%, -50%); }
+.nav-projects{ bottom: 20px; left: 60px; transform: translate(-50%, 50%); }
+.nav-img     { bottom: 20px; left: calc(100vw - 60px); transform: translate(-50%, 50%); }
 
 /* ── TAG DROPDOWN ────────────────────────────────────────── */
 .tag-dropdown {
   position: fixed;
-  top: 110px;
+  top: 50px;
   left: calc(100vw - 120px + 10px);
   z-index: 99;
   display: flex;
@@ -148,7 +148,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 /* ── LOGO ────────────────────────────────────────────────── */
 .nav-logo {
   position: fixed;
-  top: 150px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -165,7 +165,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 .nav-logo.scrolled {
   font-size: var(--logo-small);
-  top: var(--pad);
+  top: 13px;
   letter-spacing: 0.12em;
 }
 
@@ -258,6 +258,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   text-align: left;
   flex: 1;
 }
+
+.card-line { display: block; white-space: nowrap; }
 
 .card-discipline {
   font-family: 'acumin-pro', sans-serif;
@@ -446,7 +448,7 @@ body.story-page .nav-logo {
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 40px;
   background: rgba(230, 230, 230, 0.75);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(8px);
